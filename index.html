@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Thiago Sodré's Data Science Portfolio">
+    <meta name="author" content="Thiago Sodré">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Portfólio de Ciência de Dados</title>
+
+    <script>
+        function changeLanguage(lang) {
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update all elements with data-lang attribute
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(element => {
+                const langKey = element.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][langKey]) {
+                    element.textContent = translations[lang][langKey];
+                }
+            });
+            
+            // Update title
+            document.title = translations[lang]['title'];
+        }
+
+        const translations = {
+            pt: {
+                title: "Portfólio de Ciência de Dados",
+                header: "Portfólio de Projetos de Ciência de Dados",
+                welcome: "Olá, seja muito bem-vindo(a) ao meu portfólio de projetos de Ciência de Dados.",
+                intro: "Nesta página, compartilho minha jornada e minha capacidade de resolver problemas complexos de negócios utilizando os conceitos e ferramentas da Ciência de Dados.",
+                projects: "Os projetos apresentados aqui são baseados em dados públicos e demonstram como consigo aplicar técnicas analíticas para gerar insights valiosos.",
+                skills: "Além dos projetos, você encontrará detalhes sobre minha trajetória profissional, as habilidades adquiridas e as ferramentas que domino, como Python, R, SQL, além de minhas competências em visualização de dados e machine learning.",
+                transition: "Esta página reflete minha transição da advocacia para a Ciência de Dados, mostrando meu compromisso com o aprendizado contínuo e com a aplicação prática dos conceitos dessa área.",
+                contact: "Sinta-se à vontade para explorar meus projetos e se conectar comigo. Ao final da página, você encontrará formas de entrar em contato para possíveis colaborações ou oportunidades profissionais.",
+                about: "Sobre mim",
+                name: "Meu nome é Thiago Sodré",
+                bio1: "Sou formado em Direito e advoguei por mais de 10 anos. Tenho vasta experiência na área jurídica, tendo atuado em meu próprio escritório e prestado assessoria jurídica a empresas e clientes em diversos ramos do direito brasileiro. Durante esse período, desenvolvi habilidades valiosas em gestão de casos, resolução de conflitos e atendimento ao cliente, o que me proporcionou uma visão estratégica e a capacidade de analisar problemas complexos e encontrar soluções práticas e eficazes.",
+                bio2: "Atualmente, estou em um processo de transição de carreira para a área de Análise de Dados. Minha experiência no suporte ao cliente na Vodafone-PT tem me permitido aprimorar habilidades analíticas, além de me familiarizar com o uso de dados para entender e melhorar a experiência do cliente. Este movimento reflete meu interesse crescente em trabalhar com dados, buscar soluções baseadas em informações e utilizar ferramentas de análise para melhorar a tomada de decisões.",
+                bio3: "Estou dedicando tempo e esforço no aprimoramento de meus conhecimentos em Ciência de Dados e Análise de Dados, investindo em cursos e projetos pessoais para entender como a análise de dados pode ser aplicada na resolução de problemas de negócios, otimizando processos e trazendo insights que gerem valor para as empresas.",
+                objective: "Objetivo",
+                objective_text: "Estou buscando oportunidades para consolidar minha transição para a área de Análise de Dados, aplicando minha experiência prática e as novas habilidades adquiridas. Acredito que minha formação jurídica, aliada à experiência no suporte ao cliente, me dá uma perspectiva única para lidar com problemas de negócio, utilizando dados de maneira estratégica para melhorar a tomada de decisões e gerar soluções inovadoras.",
+                skills_title: "Habilidades",
+                experience_title: "Experiências profissionais",
+                experience1_title: "4+ Projetos completos de Ciência de Dados",
+                experience1_text: "Construção de soluções de dados para problemas de negócio, próximos dos desafios reais das empresas, utilizando dados públicos de competições de Ciência de Dados, onde eu abordei o problema desde a concepção do desafio de negócio até a publicação do algoritmo treinado em produção, utilizando ferramentas de Cloud Computing.",
+                projects_title: "Projetos em Ciência de Dados",
+                project1_title: "Programa de fidelidade com clusterização de clientes.",
+                project1_text: "Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um grupo de clientes com base em suas características de performance de compra, a fim de selecionar grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da empresa. E o resultado dessa solução, caso fosse implementada, seria de R$ 15MM de dólares de receita anual.",
+                tools_used: "Ferramentas utilizadas",
+                learn_more: "Saiba Mais",
+                contact_title: "Entre em contacto!",
+                contact_text: "Sinta-se à vontade para entrar em contato e discutir oportunidades de colaboração ou projetos."
+            },
+            en: {
+                title: "Data Science Portfolio",
+                header: "Data Science Projects Portfolio",
+                welcome: "Hello, welcome to my data science projects portfolio.",
+                intro: "On this page, I share my journey and ability to solve complex business problems using data science concepts and tools.",
+                projects: "The projects presented here are based on public data and show how I apply analytical techniques to generate valuable insights.",
+                skills: "In addition to the projects, you will find details about my professional background, the skills I have acquired, and the tools I master, such as Python, R, SQL, as well as my expertise in data visualization and machine learning.",
+                transition: "This page reflects my transition from law to Data Science, showing my commitment to continuous learning and the practical application of concepts in this field.",
+                contact: "Feel free to explore my projects and connect with me. At the bottom of the page, you will find ways to contact me for potential collaborations or job opportunities.",
+                about: "About me",
+                name: "My name is Thiago Sodré",
+                bio1: "I have a law degree and practiced law for over 10 years. I have extensive experience in the legal field, having worked in my own office and provided legal advice to companies and clients in various areas of Brazilian law. During this period, I developed valuable skills in case management, conflict resolution, and customer service, which gave me a strategic vision and the ability to analyze complex problems and find practical and effective solutions.",
+                bio2: "Currently, I am in the process of transitioning my career to the field of Data Analysis. My experience in customer support at Vodafone-PT has allowed me to improve analytical skills, as well as become familiar with using data to understand and improve the customer experience. This move reflects my growing interest in working with data, seeking information-based solutions, and using analytical tools to improve decision-making.",
+                bio3: "I am dedicating time and effort to improving my knowledge in Data Science and Data Analysis, investing in courses and personal projects to understand how data analysis can be applied to solve business problems, optimize processes, and bring insights that generate value for companies.",
+                objective: "Objective",
+                objective_text: "I am looking for opportunities to consolidate my transition to the field of Data Analysis, applying my practical experience and newly acquired skills. I believe that my legal background, combined with customer support experience, gives me a unique perspective to deal with business problems, using data strategically to improve decision-making and generate innovative solutions.",
+                skills_title: "Skills",
+                experience_title: "Professional experience",
+                experience1_title: "4+ Complete Data Science Projects",
+                experience1_text: "Building data solutions for business problems, close to the real challenges of companies, using public data from Data Science competitions, where I addressed the problem from the conception of the business challenge to the publication of the trained algorithm in production, using Cloud Computing tools.",
+                projects_title: "Data Science Projects",
+                project1_title: "Loyalty program with customer clustering.",
+                project1_text: "I used Python, Statistics, and unsupervised Machine Learning techniques to segment a group of customers based on their purchase performance characteristics, in order to select customer groups to form a Loyalty program aimed at increasing the company's revenue. And the result of this solution, if implemented, would be $15MM in annual revenue.",
+                tools_used: "Tools used",
+                learn_more: "Learn More",
+                contact_title: "Get in touch!",
+                contact_text: "Feel free to contact me to discuss collaboration opportunities or projects."
+            }
+        };
+
+        window.onload = () => {
+            changeLanguage('pt'); // Default language is Portuguese
+        };
+    </script>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+
+                <!-- Header -->
+                <header id="header">
+                    <a href="index.html" class="logo"><strong data-lang="header">Portfólio de Projetos de Ciência de Dados</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                    </ul>
+                    <!-- Language Menu -->
+                    <div>
+                        <button onclick="changeLanguage('pt')">Português</button>
+                        <button onclick="changeLanguage('en')">English</button>
+                    </div>
+                </header>
+
+                <!-- Banner -->
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h1 data-lang="welcome">Olá, seja muito bem-vindo(a) ao meu portfólio de projetos de Ciência de Dados.</h1>
+                        </header>
+                        <p data-lang="intro">Nesta página, compartilho minha jornada e minha capacidade de resolver problemas complexos de negócios utilizando os conceitos e ferramentas da Ciência de Dados.</p>
+                        <p data-lang="projects">Os projetos apresentados aqui são baseados em dados públicos e demonstram como consigo aplicar técnicas analíticas para gerar insights valiosos.</p>
+                        <p data-lang="skills">Além dos projetos, você encontrará detalhes sobre minha trajetória profissional, as habilidades adquiridas e as ferramentas que domino, como Python, R, SQL, além de minhas competências em visualização de dados e machine learning.</p>
+                        <p data-lang="transition">Esta página reflete minha transição da advocacia para a Ciência de Dados, mostrando meu compromisso com o aprendizado contínuo e com a aplicação prática dos conceitos dessa área.</p>
+                        <p data-lang="contact">Sinta-se à vontade para explorar meus projetos e se conectar comigo. Ao final da página, você encontrará formas de entrar em contato para possíveis colaborações ou oportunidades profissionais.</p>
+                    </div>
+                    <span class="image object">
+                        <img src="images/pic01.jpg" alt="" />
+                    </span>
+                </section>
+
+                <!-- Content -->
+                <section>
+                    <header class="major">
+                        <h1 data-lang="about">Sobre mim</h1>
+                    </header>
+
+                    <h2 id="content" data-lang="name">Meu nome é Thiago Sodré</h2>
+                    <p data-lang="bio1">Sou formado em Direito e advoguei por mais de 10 anos. Tenho vasta experiência na área jurídica, tendo atuado em meu próprio escritório e prestado assessoria jurídica a empresas e clientes em diversos ramos do direito brasileiro. Durante esse período, desenvolvi habilidades valiosas em gestão de casos, resolução de conflitos e atendimento ao cliente, o que me proporcionou uma visão estratégica e a capacidade de analisar problemas complexos e encontrar soluções práticas e eficazes.</p>
+                    <p data-lang="bio2">Atualmente, estou em um processo de transição de carreira para a área de Análise de Dados. Minha experiência no suporte ao cliente na Vodafone-PT tem me permitido aprimorar habilidades analíticas, além de me familiarizar com o uso de dados para entender e melhorar a experiência do cliente. Este movimento reflete meu interesse crescente em trabalhar com dados, buscar soluções baseadas em informações e utilizar ferramentas de análise para melhorar a tomada de decisões.</p>
+                    <p data-lang="bio3">Estou dedicando tempo e esforço no aprimoramento de meus conhecimentos em Ciência de Dados e Análise de Dados, investindo em cursos e projetos pessoais para entender como a análise de dados pode ser aplicada na resolução de problemas de negócios, otimizando processos e trazendo insights que gerem valor para as empresas.</p>
+
+                    <h2 id="content" data-lang="objective">Objetivo</h2>
+                    <p data-lang="objective_text">Estou buscando oportunidades para consolidar minha transição para a área de Análise de Dados, aplicando minha experiência prática e as novas habilidades adquiridas. Acredito que minha formação jurídica, aliada à experiência no suporte ao cliente, me dá uma perspectiva única para lidar com problemas de negócio, utilizando dados de maneira estratégica para melhorar a tomada de decisões e gerar soluções inovadoras.</p>
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h1 data-lang="skills_title">Habilidades</h1>
+                    </header>
+                    <div class="features">
+                        <article>
+                            <span class="icon fa-gem"></span>
+                            <div class="content">
+                                <h3>Python, Excel, Power Bi e SQL</h3>
+                                <ul>
+                                    <li>Python com foco em análise de dados.</li>
+                                    <li>Web scraping com Python</li>
+                                    <li>SQL para extração de dados</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon solid fa-paper-plane"></span>
+                            <div class="content">
+                                <h3> Estatística e Machine Learning</h3>
+                                <ul>
+                                    <li>Python com foco em análise de dados.</li>
+                                    <li>Web scraping com Python.</li>
+                                    <li>SQL para extração de dados.</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon solid fa-rocket"></span>
+                            <div class="content">
+                                <h3>Visualização de Dados</h3>
+                                <ul>
+                                    <li>Python com foco em análise de dados.</li>
+                                    <li>Web scraping com Python</li>
+                                    <li>SQL para extração de dados</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article>
+                            <span class="icon solid fa-signal"></span>
+                            <div class="content">
+                                <h3>Engenharia de Software</h3>
+                                <ul>
+                                    <li>Python com foco em análise de dados.</li>
+                                    <li>Web scraping com Python</li>
+                                    <li>SQL para extração de dados</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                    <li>Outras</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Content -->
+                <section>
+                    <header class="major">
+                        <h1 data-lang="experience_title">Experiências profissionais</h1>
+                    </header>
+
+                    <h2 id="content" data-lang="experience1_title">4+ Projetos completos de Ciência de Dados</h2>
+                    <p data-lang="experience1_text">Construção de soluções de dados para problemas de negócio, próximos dos desafios reais das empresas, utilizando dados públicos de competições de Ciência de Dados, onde eu abordei o problema desde a concepção do desafio de negócio até a publicação do algoritmo treinado em produção, utilizando ferramentas de Cloud Computing.</p>
+                    
+                    <h2 id="content" data-lang="experience1_title">4+ Projetos completos de Ciência de Dados</h2>
+                    <p data-lang="experience1_text">Construção de soluções de dados para problemas de negócio, próximos dos desafios reais das empresas, utilizando dados públicos de competições de Ciência de Dados, onde eu abordei o problema desde a concepção do desafio de negócio até a publicação do algoritmo treinado em produção, utilizando ferramentas de Cloud Computing.</p>
+                    
+                    <h2 id="content" data-lang="experience1_title">4+ Projetos completos de Ciência de Dados</h2>
+                    <p data-lang="experience1_text">Construção de soluções de dados para problemas de negócio, próximos dos desafios reais das empresas, utilizando dados públicos de competições de Ciência de Dados, onde eu abordei o problema desde a concepção do desafio de negócio até a publicação do algoritmo treinado em produção, utilizando ferramentas de Cloud Computing.</p>            
+                </section>
+
+                <!-- Section -->
+                <section>
+                    <header class="major">
+                        <h1 data-lang="projects_title">Projetos em Ciência de Dados</h1>
+                    </header>
+                    <div class="posts">
+                        <article>
+                            <a href="#" class="image"><img src="images/businessman-reading-graph-report-and-business-statistics-charts-analysis-and-improvement-of-corporate-strategy-manage-financial-and-marketing-documents-statistics-and-data-concepts-free-photo.jpg" alt="" /></a>
+                            <h3 data-lang="project1_title">Programa de fidelidade com clusterização de clientes.</h3>
+                            <p data-lang="project1_text">Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um grupo de clientes com base em suas características de performance de compra, a fim de selecionar grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da empresa. E o resultado dessa solução, caso fosse implementada, seria de R$ 15MM de dólares de receita anual.</p>
+                            <h4 data-lang="tools_used">Ferramentas utilizadas</h4>
+                            <ul>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                            </ul>
+                            <ul class="actions">
+                                <li><a href="#" class="button" data-lang="learn_more">Saiba Mais</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+                            <h3>Projeto 2</h3>
+                            <p>Descrição Projeto 2 >> Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                            <ul>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                            </ul>
+                            <ul class="actions">
+                                <li><a href="#" class="button" data-lang="learn_more">Saiba Mais</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+                            <h3>Projeto 3</h3>
+                            <p>Descrição Projeto 3 >> Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                            <ul>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                            </ul>
+                            <ul class="actions">
+                                <li><a href="#" class="button" data-lang="learn_more">Saiba Mais</a></li>
+                            </ul>
+                        </article>
+                        <article>
+                            <a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+                            <h3>Projeto 4</h3>
+                            <p>Descrição Projeto 4 >> ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                            <ul>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                                <li>Dolor etiam magna etiam.</li>
+                                <li>Sagittis lorem eleifend.</li>
+                                <li>Felis dolore viverra.</li>
+                            </ul>
+                            <ul class="actions">
+                                <li><a href="#" class="button" data-lang="learn_more">Saiba Mais</a></li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <header class="major">
+                        <h2 data-lang="contact_title">Entre em contacto!</h2>
+                    </header>
+                    <p data-lang="contact_text">Sinta-se à vontade para entrar em contato e discutir oportunidades de colaboração ou projetos.</p>
+                    <ul class="contact">
+                        <li class="icon solid fa-envelope">thiagosodreadv@gmail.com</li>
+                        <li class="icon brands fa-linkedin"><a href="www.link linkedin">Linkedin</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Search" />
+                    </form>
+                </section>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
