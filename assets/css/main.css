@@ -2271,3 +2271,70 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+
+
+    
+
+
+
+/* Alinhamento do cabeçalho */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Container dos botões de idioma */
+.language-container {
+  position: absolute;
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Alinhado à direita */
+  display: flex;
+  gap: 10px; /* Espaço entre os botões */
+}
+
+/* Botões de idioma menores e centralizados */
+.language-container button {
+  background-color: #fbfcfb; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  padding: 5px 15px; /* Menor espaçamento interno */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Tamanho de fonte menor */
+  display: flex; /* Usando flexbox para garantir a centralização */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center; /* Garante que o texto fique centralizado */
+  transition: background-color 0.3s ease; /* Efeito suave de transição */
+}
+
+/* Efeitos nos botões ao passar o mouse */
+.language-container button:hover {
+  background-color: #cac9c9;
+}
+
+/* Estilos dos ícones das redes sociais */
+.icons {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icons li {
+  display: inline-block;
+}
+
+/* Estilos dos ícones das redes sociais */
+.icons a {
+  font-size: 24px;
+  color: #333;
+}
+
+.icons a:hover {
+  color: #fafffa; /* Cor dos ícones ao passar o mouse */
+}
