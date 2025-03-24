@@ -2277,7 +2277,8 @@ button,
 
 
 
-/* Alinhamento do cabeçalho */
+    
+    /* Alinhamento do cabeçalho */
 #header {
   display: flex;
   justify-content: space-between;
@@ -2297,7 +2298,7 @@ button,
 
 /* Botões de idioma menores e centralizados */
 .language-container button {
-  background-color: #fbfcfb; /* Cor de fundo do botão */
+  background-color: #f8faf8; /* Cor de fundo do botão */
   color: white; /* Cor do texto */
   padding: 5px 15px; /* Menor espaçamento interno */
   border: none;
@@ -2313,7 +2314,7 @@ button,
 
 /* Efeitos nos botões ao passar o mouse */
 .language-container button:hover {
-  background-color: #cac9c9;
+  background-color: #b3b6b3;
 }
 
 /* Estilos dos ícones das redes sociais */
@@ -2336,5 +2337,67 @@ button,
 }
 
 .icons a:hover {
-  color: #fafffa; /* Cor dos ícones ao passar o mouse */
+  color: #4CAF50; /* Cor dos ícones ao passar o mouse */
+}
+
+/* Media Query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  /* Container dos botões de idioma ajustado */
+  .language-container {
+      position: static; /* Faz com que os botões de idioma fiquem no fluxo normal da página */
+      margin-top: 10px; /* Distância do topo */
+      justify-content: center; /* Centraliza os botões */
+      width: 100%; /* Ocupa toda a largura */
+      gap: 20px; /* Maior espaço entre os botões */
+  }
+
+  /* Ajustando os botões para tamanhos menores em dispositivos móveis */
+  .language-container button {
+      font-size: 12px; /* Tamanho de fonte menor em dispositivos móveis */
+      padding: 5px 10px; /* Menor espaçamento interno */
+  }
+
+  /* Ajustando os ícones das redes sociais em dispositivos móveis */
+  .icons {
+      flex-direction: column; /* Coloca os ícones em coluna em vez de linha */
+      align-items: center; /* Centraliza os ícones */
+      margin-top: 20px;
+  }
+
+  .icons li {
+      margin-bottom: 10px; /* Distância entre os ícones */
+  }
+
+  .icons a {
+      font-size: 20px; /* Reduz o tamanho dos ícones para dispositivos móveis */
+  }
+}
+
+/* Media Query para telas muito pequenas, como celulares em modo retrato */
+@media screen and (max-width: 480px) {
+  /* Fazendo o cabeçalho mais compacto em telas menores */
+  #header {
+      flex-direction: column; /* Alinha o conteúdo do cabeçalho verticalmente */
+      align-items: center; /* Centraliza o conteúdo do cabeçalho */
+      padding: 10px;
+  }
+
+  .language-container {
+      margin-top: 10px;
+      position: static;
+      width: 100%;
+      justify-content: center;
+  }
+
+  /* Ajustando os botões de idioma para ficarem em linha única */
+  .language-container button {
+      font-size: 12px;
+      padding: 5px 10px;
+      width: auto;
+  }
+
+  /* Ajustando a largura dos ícones das redes sociais */
+  .icons a {
+      font-size: 20px;
+  }
 }
