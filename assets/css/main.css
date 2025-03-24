@@ -2278,13 +2278,14 @@ button,
 
 
     
-    /* Alinhamento do cabeçalho */
+/* Alinhamento do cabeçalho */
 #header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   position: relative;
+  flex-wrap: wrap; /* Permite que os elementos se movam para a linha seguinte, se necessário */
 }
 
 /* Container dos botões de idioma */
@@ -2298,7 +2299,7 @@ button,
 
 /* Botões de idioma menores e centralizados */
 .language-container button {
-  background-color: #f8faf8; /* Cor de fundo do botão */
+  background-color: #f8f8f8; /* Cor de fundo do botão */
   color: white; /* Cor do texto */
   padding: 5px 15px; /* Menor espaçamento interno */
   border: none;
@@ -2314,7 +2315,7 @@ button,
 
 /* Efeitos nos botões ao passar o mouse */
 .language-container button:hover {
-  background-color: #b3b6b3;
+  background-color: #d6d8d6;
 }
 
 /* Estilos dos ícones das redes sociais */
@@ -2324,10 +2325,6 @@ button,
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.icons li {
-  display: inline-block;
 }
 
 /* Estilos dos ícones das redes sociais */
@@ -2349,6 +2346,7 @@ button,
       justify-content: center; /* Centraliza os botões */
       width: 100%; /* Ocupa toda a largura */
       gap: 20px; /* Maior espaço entre os botões */
+      padding: 0 20px; /* Adiciona um preenchimento lateral */
   }
 
   /* Ajustando os botões para tamanhos menores em dispositivos móveis */
@@ -2359,9 +2357,10 @@ button,
 
   /* Ajustando os ícones das redes sociais em dispositivos móveis */
   .icons {
-      flex-direction: column; /* Coloca os ícones em coluna em vez de linha */
-      align-items: center; /* Centraliza os ícones */
+      flex-direction: row; /* Deixa os ícones em linha novamente */
+      justify-content: center; /* Centraliza os ícones */
       margin-top: 20px;
+      margin-bottom: 10px; /* Espaço inferior para separar do conteúdo */
   }
 
   .icons li {
@@ -2400,4 +2399,16 @@ button,
   .icons a {
       font-size: 20px;
   }
+
+  /* Garantindo que os ícones e os botões de idioma não se sobreponham */
+  .language-container, .icons {
+      width: 100%; /* Faz com que ambos os containers ocupem a largura inteira */
+      text-align: center; /* Garante que o conteúdo fique centralizado */
+  }
+
+  /* Separação dos ícones para que eles não fiquem colados ao conteúdo */
+  .icons {
+      margin-top: 15px;
+  }
 }
+
